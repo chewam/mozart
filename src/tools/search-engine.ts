@@ -2,16 +2,17 @@ import { BaseTool } from "./base-tool"
 
 const SERPAPI_BASE_URL = "https://serpapi.com"
 
-export class SerpAPI extends BaseTool {
+export class SearchEngine extends BaseTool {
   constructor() {
-    const name = "serpapi"
+    const name = "search-engine"
     const description = `
-      - SerpAPI:
+      - SearchEngine:
         - description:
-          A search engine. useful for when you need to answer questions about current events. input should be a search query.
-          It takes JSON object as an input and returns a JSON object as an output
-        - input: { "tool": "serpapi", "input": <search query> }
-        - ouput: { "tool": "serpapi", "input": <search query>, "output": <the result of the search query> }
+          A tool to run Google search engine queries.
+          Useful when you need to find fresh information about any topic.
+          It takes a single JSON object as an input and returns a single JSON object as an output
+        - input: { "tool": "search-engine", "input": <search query> }
+        - ouput: { "tool": "search-engine", "input": <search query>, "output": <Google result for the search query> }
     `
     super({ name, description })
   }
@@ -65,13 +66,15 @@ export class SerpAPI extends BaseTool {
 
   async run(input: string) {
     const url = this.getUrl(input)
-    const response = await fetch(url)
+    const response = await fetch(url.toString())
     const data = await response.json()
 
     if (data.error) {
-      return `Got error from serpAPI: ${data.error}`
+      return `Got error from search engine tool: ${data.error}`
     }
 
-    return this.getAnswer(data)
+    const answer = this.getAnswer(data)
+
+    return answer
   }
 }

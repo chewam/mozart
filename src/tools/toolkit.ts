@@ -1,9 +1,11 @@
 import type { BaseTool } from "./base-tool"
 
-const TOOLKIT_PREFIX =
-  "To help you in this task you can use one of the tools described bellow:"
-const TOOLKIT_SUFFIX =
-  "When you tend to use a tool, send only the tool's required input as a message."
+const TOOLKIT_PREFIX = "You must use the tools described bellow:"
+const TOOLKIT_SUFFIX = `Use the provided tools as many times as you need to find the final answer to the question.
+When you use a tool, send only the tool's required input as a message, don't send any extra text before or after the tool's required input.
+Give the provided tools a try before considering that they cannot be helpful.
+Don't ask the permission to the user to use the tools, don't ask the user if using the tools a certain way would be a good idea or not. Just use the tools the way you think it is correct until you get the final answer. If you consider that the provided tools are not helping, give a reason.
+`
 
 interface Config {
   prefix: string

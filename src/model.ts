@@ -124,7 +124,7 @@ export class Model {
         (tool) => tool.name === jsonAnswer.tool
       )
       if (tool) {
-        jsonAnswer.output = tool.run(jsonAnswer.input)
+        jsonAnswer.output = await tool.run(jsonAnswer.input)
         return this.use({ message: JSON.stringify(jsonAnswer) })
       }
     }
