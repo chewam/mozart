@@ -1,0 +1,28 @@
+{
+  "name": "mozart",
+  "version": "1.0.0",
+  "description": "Orchestrates AI symphony",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@tsconfig/recommended": "^1.0.2",
+    "@types/node": "^18.15.11",
+    "@typescript-eslint/eslint-plugin": "^5.57.1",
+    "@typescript-eslint/parser": "^5.57.1",
+    "eslint": "^8.38.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.8.7",
+    "typescript": "5.0.4"
+  },
+  "dependencies": {
+    "openai": "^3.2.1"
+  }
+}
