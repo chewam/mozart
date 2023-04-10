@@ -25,7 +25,7 @@ export class Model {
   constructor({ model, tools }: { model: OpenAIModel; tools: BaseTool[] }) {
     this.prompt = {}
     this.model = model
-    this.toolkit = new Toolkit(tools)
+    this.toolkit = tools && new Toolkit(tools)
 
     this.clientConfig = {
       apiKey: process.env.OPENAI_API_KEY,
@@ -53,7 +53,10 @@ export class Model {
     let messages: ChatCompletionRequestMessage[] = []
 
     if (system) {
-      this.prompt.system = `${system}\n${this.toolkit.prompt}`
+      this.prompt.system = system
+      if (this.toolkit) {
+        this.prompt.system += `\n${this.toolkit.prompt}`
+      }
     }
     if (this.prompt.system) {
       messages.push(this.createMessage("system", this.prompt.system))
@@ -117,15 +120,17 @@ export class Model {
       this.addToHistory([answer])
     }
 
-    const jsonAnswer = this.isJson(answer?.content)
+    if (this.toolkit) {
+      const jsonAnswer = this.isJson(answer?.content)
 
-    if (jsonAnswer) {
-      const tool = this.toolkit.tools.find(
-        (tool) => tool.name === jsonAnswer.tool
-      )
-      if (tool) {
-        jsonAnswer.output = await tool.run(jsonAnswer.input)
-        return this.use({ message: JSON.stringify(jsonAnswer) })
+      if (jsonAnswer) {
+        const tool = this.toolkit.tools.find(
+          (tool) => tool.name === jsonAnswer.tool
+        )
+        if (tool) {
+          jsonAnswer.output = await tool.run(jsonAnswer.input)
+          return this.use({ message: JSON.stringify(jsonAnswer) })
+        }
       }
     }
 
