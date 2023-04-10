@@ -1,3 +1,8 @@
+#### Install dependencies
+```shell
+yarn
+```
+
 #### Build Postgres docker image
 ```shell
 docker build -t chinook .
