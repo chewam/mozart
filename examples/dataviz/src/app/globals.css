@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -28,4 +28,51 @@ body {
 
 input {
   color: black;
+} */
+html {
+  @apply h-full;
+}
+
+body {
+  @apply flex h-full overflow-auto p-12;
+}
+
+main {
+  @apply flex flex-col flex-1 overflow-auto;
+}
+
+form {
+  @apply py-12;
+}
+
+/* .visualisation {
+  @apply flex flex-1 overflow-auto;
+}
+
+.visualisation .chart {
+  @apply flex flex-1 overflow-auto;
+}
+
+.visualisation .vega-embed {
+  @apply flex flex-1 overflow-auto;
+}
+
+.chart-wrapper {
+  @apply flex flex-1;
+} */
+
+.vega-embed {
+  width: 100%;
+}
+
+input {
+  @apply bg-yellow-50 border border-l-neutral-500 p-2 mr-2;
+}
+
+button {
+  @apply bg-neutral-100 border border-l-neutral-500 p-2;
+}
+
+h1 {
+  @apply text-2xl font-bold;
 }
