@@ -99,7 +99,7 @@ export class Model {
     system?: string
     message?: string
     history?: ChatCompletionRequestMessage[]
-  }): Promise<ChatCompletionRequestMessage | undefined> {
+  }): Promise<ChatCompletionRequestMessage> {
     const messages = this.createMessages({ system, history, message })
     // console.log("Mozart::messages", messages)
 
@@ -110,7 +110,8 @@ export class Model {
     // console.log("Mozart::send", completion.config.data)
     // console.log("Mozart::choices", completion.data.choices)
 
-    const answer = completion.data.choices[0].message
+    const answer =
+      completion.data.choices[0].message || ({} as ChatCompletionRequestMessage)
 
     if (message) {
       this.addToHistory([this.createMessage("user", message)])
