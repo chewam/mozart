@@ -17,12 +17,12 @@ type Prompt = {
 
 export class Model {
   prompt: Prompt
-  toolkit: Toolkit
+  toolkit?: Toolkit
   client: OpenAIApi
   model: OpenAIModel
   clientConfig: Record<string, unknown>
 
-  constructor({ model, tools }: { model: OpenAIModel; tools: BaseTool[] }) {
+  constructor({ model, tools }: { model: OpenAIModel; tools?: BaseTool[] }) {
     this.prompt = {}
     this.model = model
     this.toolkit = tools && new Toolkit(tools)
