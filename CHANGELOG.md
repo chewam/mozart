@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/chewam/mozart/compare/v1.0.2...v1.0.3) (2023-04-11)
+
+
+### Bug Fixes
+
+* model answer type ([0a1026d](https://github.com/chewam/mozart/commit/0a1026de5a3681c6c535227b5943b632d433baa8))
+
 ## [1.0.2](https://github.com/chewam/mozart/compare/v1.0.1...v1.0.2) (2023-04-11)
 
 
