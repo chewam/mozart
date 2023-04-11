@@ -25,10 +25,8 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+*/
 
-input {
-  color: black;
-} */
 html {
   @apply h-full;
 }
@@ -44,22 +42,6 @@ main {
 form {
   @apply py-12;
 }
-
-/* .visualisation {
-  @apply flex flex-1 overflow-auto;
-}
-
-.visualisation .chart {
-  @apply flex flex-1 overflow-auto;
-}
-
-.visualisation .vega-embed {
-  @apply flex flex-1 overflow-auto;
-}
-
-.chart-wrapper {
-  @apply flex flex-1;
-} */
 
 .vega-embed {
   width: 100%;
