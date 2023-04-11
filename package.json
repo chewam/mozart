@@ -1,5 +1,5 @@
 {
-  "name": "mozart",
+  "name": "@chewam/mozart",
   "version": "1.0.0",
   "description": "Orchestrates AI symphony",
   "main": "dist/index.js",
