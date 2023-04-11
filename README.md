@@ -1,6 +1,6 @@
 # mozart
 
-A library to play with OpenAI LLM API.
+A library to play with OpenAI API.
 
 ### Example
 
