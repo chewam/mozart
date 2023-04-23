@@ -25,8 +25,8 @@ export class Toolkit {
     this.tools = tools
     this.prefix = config.prefix
     this.suffix = config.suffix
-    this.prompt = `${this.prefix}\n\n${tools
+    this.prompt = `${this.prefix}\n${tools
       .map((tool) => tool.description)
-      .join("\n")}\n\n${this.suffix}`
+      .join("\n")}\n${this.suffix}`
   }
 }
