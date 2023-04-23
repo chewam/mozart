@@ -5,7 +5,7 @@ import {
 } from "openai"
 
 import type { BaseTool } from "./tools"
-import { Toolkit } from "./tools/toolkit"
+import { Toolkit, type ToolkitConfig } from "./tools/toolkit"
 
 type OpenAIModel = "gpt-3.5-turbo" | "gpt-4"
 
@@ -22,10 +22,18 @@ export class Model {
   model: OpenAIModel
   clientConfig: Record<string, unknown>
 
-  constructor({ model, tools }: { model: OpenAIModel; tools?: BaseTool[] }) {
+  constructor({
+    model,
+    tools,
+    toolkitConfig,
+  }: {
+    model: OpenAIModel
+    tools?: BaseTool[]
+    toolkitConfig?: ToolkitConfig
+  }) {
     this.prompt = {}
     this.model = model
-    this.toolkit = tools && new Toolkit(tools)
+    this.toolkit = tools && new Toolkit(tools, toolkitConfig)
 
     this.clientConfig = {
       apiKey: process.env.OPENAI_API_KEY,

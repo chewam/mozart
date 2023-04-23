@@ -7,7 +7,7 @@ Give the provided tools a try before considering that they cannot be helpful.
 Don't ask the permission to the user to use the tools, don't ask the user if using the tools a certain way would be a good idea or not. Just use the tools the way you think it is correct until you get the final answer. If you consider that the provided tools are not helping, give a reason.
 `
 
-interface Config {
+export interface ToolkitConfig {
   prefix: string
   suffix: string
 }
@@ -20,7 +20,7 @@ export class Toolkit {
 
   constructor(
     tools: BaseTool[],
-    config: Config = { prefix: TOOLKIT_PREFIX, suffix: TOOLKIT_SUFFIX }
+    config: ToolkitConfig = { prefix: TOOLKIT_PREFIX, suffix: TOOLKIT_SUFFIX }
   ) {
     this.tools = tools
     this.prefix = config.prefix
