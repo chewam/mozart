@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/chewam/mozart/compare/v1.1.0...v1.1.1) (2023-04-23)
+
+
+### Bug Fixes
+
+* remove toolkit prompt linebreaks ([c74e53b](https://github.com/chewam/mozart/commit/c74e53b1e7d92e38487346a9388e111880bbad76))
+
 # [1.1.0](https://github.com/chewam/mozart/compare/v1.0.3...v1.1.0) (2023-04-23)
 
 
