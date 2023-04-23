@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/chewam/mozart/compare/v1.0.3...v1.1.0) (2023-04-23)
+
+
+### Features
+
+* allow toolkit prefix and suffix config ([aa63e7a](https://github.com/chewam/mozart/commit/aa63e7abd06eea41df9012547199aacbb3603fcd))
+
 ## [1.0.3](https://github.com/chewam/mozart/compare/v1.0.2...v1.0.3) (2023-04-11)
 
 
