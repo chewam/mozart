@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/chewam/mozart/compare/v1.1.1...v1.1.2) (2023-06-17)
+
+
+### Bug Fixes
+
+* upgrade openai dependency ([411ae91](https://github.com/chewam/mozart/commit/411ae91f691db60bc53fa8e92efb27cb2284f480))
+
 ## [1.1.1](https://github.com/chewam/mozart/compare/v1.1.0...v1.1.1) (2023-04-23)
 
 
